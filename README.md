@@ -1,8 +1,10 @@
 # Test of a component with Redux Hooks
 
-I faced the question of how to test component that used Redux Hooks. To deal with it I extended recipe from React Testing Library.
+I faced the question of how to test component that used Redux Hooks. To deal with it I extended recipe from React Testing Library.
 
-Perhaps I’ll add Sagas and Typescript.
+As I understand after one Redux contributor lecture, there are two ways for component with Redux: unit test unconnected one or integration test connected component by rendering with a Provider. Another Redux contributor @nickmccurdy said that hooks were recommended and made things like typechecking much easier, so I chose the second way.
+
+Perhaps I’ll add Sagas and Typescript to my example.
 
 <br />
 
@@ -19,3 +21,4 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 <br />
 
 [RTL. React Redux Recipe](https://testing-library.com/docs/example-react-redux)
+[Mark Erikson lecture](https://youtu.be/xiKMbmDv-Vw?t=1191)
