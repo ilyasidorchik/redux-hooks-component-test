@@ -1,39 +1,46 @@
 import React from 'react';
 import { createStore } from 'redux';
 
-import { render, screen, fireEvent } from '../utils/test-utils';
+import { render, fireEvent } from '../utils/test-utils';
 import ConnectedCounter from '.';
 
 describe('Counter', () => {
 	it('renders with redux with defaults', () => {
-		render(<ConnectedCounter />);
+		const { container } = render(<ConnectedCounter />);
+		const buttonIncrement = container.querySelector('.Counter-Button_increment');
+		const value = container.querySelector('.Counter-Value');
 
-		fireEvent.click(screen.getByText('+'));
+		fireEvent.click(buttonIncrement);
 
-		expect(screen.getByTestId('count-value')).toHaveTextContent('1');
+		expect(value).toHaveTextContent('1');
 	});
 
 	it('renders with redux with custom initial state', () => {
-		render(<ConnectedCounter />, {
+		const { container } = render(<ConnectedCounter />, {
 			initialState: { count: 3 },
 		});
+		const buttonDecrement = container.querySelector('.Counter-Button_decrement');
+		const value = container.querySelector('.Counter-Value')
 
-		fireEvent.click(screen.getByText('−'));
+		fireEvent.click(buttonDecrement);
 
-		expect(screen.getByTestId('count-value')).toHaveTextContent('2');
+		expect(value).toHaveTextContent('2');
 	});
 
 	it('renders with redux with custom store', () => {
 		const store = createStore(() => ({ count: 1000 }));
 
-		render(<ConnectedCounter />, {
+		const { container } = render(<ConnectedCounter />, {
 			store,
 		});
+		const buttonIncrement = container.querySelector('.Counter-Button_increment');
+		const buttonDecrement = container.querySelector('.Counter-Button_decrement');
+		const value = container.querySelector('.Counter-Value')
 
-		fireEvent.click(screen.getByText('+'));
-		expect(screen.getByTestId('count-value')).toHaveTextContent('1000');
+		fireEvent.click(buttonIncrement);
+		expect(value).toHaveTextContent('1000');
 
-		fireEvent.click(screen.getByText('−'));
-		expect(screen.getByTestId('count-value')).toHaveTextContent('1000');
+		fireEvent.click(buttonDecrement);
+		expect(value).toHaveTextContent('1000');
 	});
 });

@@ -13,12 +13,24 @@ const Counter = ({ dispatch, count }) => {
 	};
 
 	return (
-		<div>
+		<div className="Counter">
 			<h2>Counter</h2>
 			<div>
-				<button onClick={handleDecrease}>−</button> 
-				<span data-testid="count-value">{count}</span> 
-				<button onClick={handleIncrease}>+</button>
+				<button
+					className="Counter-Button Counter-Button_decrement"
+					onClick={handleDecrease}
+				>
+					−
+				</button>
+
+				<span className="Counter-Value">{count}</span>
+
+				<button
+					className="Counter-Button Counter-Button_increment"
+					onClick={handleIncrease}
+				>
+					+
+				</button>
 			</div>
 		</div>
 	);
