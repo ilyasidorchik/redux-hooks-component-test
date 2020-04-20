@@ -1,6 +1,6 @@
 # Test of a component with Redux Hooks
 
-I faced the question of how to test component that used Redux Hooks. To deal with it I extended recipe from React Testing Library.
+I faced the question of how to test component that used Redux Hooks. To deal with it I extended recipe from React Testing Library.
 
 Perhaps I’ll add Sagas and Typescript.
 
