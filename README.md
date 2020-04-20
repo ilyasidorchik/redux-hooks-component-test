@@ -20,5 +20,6 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 <br />
 
-[RTL. React Redux Recipe](https://testing-library.com/docs/example-react-redux)
-[Mark Erikson lecture](https://youtu.be/xiKMbmDv-Vw?t=1191)
+[Docs about Redux Hooks](https://react-redux.js.org/next/api/hooks)<br />
+[React Redux Test Recipe](https://testing-library.com/docs/example-react-redux)<br/>
+[Lecture 'Hooks, HOCS, and Tradeoffs'](https://youtu.be/xiKMbmDv-Vw?t=1191)
