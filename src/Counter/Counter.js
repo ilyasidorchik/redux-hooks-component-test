@@ -1,9 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { increment, decrement } from './duck';
 
-const Counter = ({ dispatch, count }) => {
+const Counter = () => {
+	const count = useSelector(state => state.count);
+	const dispatch = useDispatch();
+
 	const handleDecrease = () => {
 		dispatch(decrement());
 	};
@@ -36,4 +39,4 @@ const Counter = ({ dispatch, count }) => {
 	);
 };
 
-export default connect((state) => ({ count: state.count }))(Counter);
+export default Counter;
