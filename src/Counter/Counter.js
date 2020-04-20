@@ -1,22 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { increment, decrement } from './duck';
+
 const Counter = ({ dispatch, count }) => {
-	const increment = () => {
-		dispatch({ type: 'INCREMENT' });
+	const handleDecrease = () => {
+		dispatch(decrement());
 	};
 
-	const decrement = () => {
-		dispatch({ type: 'DECREMENT' });
+	const handleIncrease = () => {
+		dispatch(increment());
 	};
 
 	return (
 		<div>
 			<h2>Counter</h2>
 			<div>
-				<button onClick={decrement}>−</button> 
+				<button onClick={handleDecrease}>−</button> 
 				<span data-testid="count-value">{count}</span> 
-				<button onClick={increment}>+</button>
+				<button onClick={handleIncrease}>+</button>
 			</div>
 		</div>
 	);
