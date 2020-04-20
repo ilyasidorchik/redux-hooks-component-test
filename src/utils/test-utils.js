@@ -3,12 +3,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render as rtlRender } from '@testing-library/react';
 
-import { initialState as initialReducerState, reducer } from '../Counter/duck';
+import { initialState as reducerInitialState, reducer } from '../Counter/duck';
 
 function render(
 	ui,
 	{
-		initialState = initialReducerState,
+		initialState = reducerInitialState,
 		store = createStore(reducer, initialState),
 		...renderOptions
 	} = {}
