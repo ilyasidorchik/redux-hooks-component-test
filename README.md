@@ -3,6 +3,7 @@
 I faced the question of how to test component that used Redux Hooks. To deal with it I extended recipe from React Testing Library.
 
 [RTL. React Redux Recipe](https://testing-library.com/docs/example-react-redux)
+
 <br />
 
 `yarn start`
