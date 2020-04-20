@@ -4,6 +4,7 @@ I faced the question of how to test component that used Redux Hooks. To deal wit
 
 [RTL. React Redux Recipe](https://testing-library.com/docs/example-react-redux)
 
+<br />
 
 ### `yarn start`
 
