@@ -2,7 +2,7 @@
 
 I faced the question of how to test component that used Redux Hooks. To deal with it I extended recipe from React Testing Library.
 
-As I understand after one Redux contributor lecture, there are two ways for component with Redux: unit test unconnected one or integration test connected component by rendering with a Provider. Another Redux contributor @nickmccurdy said that hooks were recommended and made things like typechecking much easier, so I chose the second way.
+As I understand after one Redux contributor lecture, there are two ways for component with Redux: unit test unconnected one or integration test connected component by rendering with a Provider. Another Redux contributor Nick McCurdy said that hooks were recommended and made things like typechecking much easier, so I chose the second way.
 
 Perhaps I’ll add Sagas and Typescript to my example.
 
