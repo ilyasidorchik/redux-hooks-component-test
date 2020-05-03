@@ -8,10 +8,19 @@ import reducer, { rootPreloadedState } from '../modules';
 function getInitialStore(initialState) {
 	if (!initialState) return rootPreloadedState;
 
-	return {
-		...rootPreloadedState,
-		counter: initialState,
-	};
+	const newState = Object.assign(rootPreloadedState);
+
+	for (const key in initialState) {
+		for (const state in rootPreloadedState) {
+			for (const subState in rootPreloadedState[state]) {
+				if (key === subState) {
+					newState[state] = initialState;
+				}
+			}
+		}
+	}
+
+	return newState;
 }
 
 function render(
