@@ -5,29 +5,11 @@ import { render as rtlRender } from '@testing-library/react';
 
 import reducer, { rootPreloadedState } from '../modules';
 
-function getInitialStore(initialState) {
-	if (!initialState) return rootPreloadedState;
-
-	const newState = Object.assign(rootPreloadedState);
-
-	for (const key in initialState) {
-		for (const state in rootPreloadedState) {
-			for (const subState in rootPreloadedState[state]) {
-				if (key === subState) {
-					newState[state] = initialState;
-				}
-			}
-		}
-	}
-
-	return newState;
-}
-
 function render(
 	ui,
 	{
-		initialState,
-		store = createStore(reducer, getInitialStore(initialState)),
+		initialState = rootPreloadedState,
+		store = createStore(reducer, initialState),
 		...renderOptions
 	} = {}
 ) {

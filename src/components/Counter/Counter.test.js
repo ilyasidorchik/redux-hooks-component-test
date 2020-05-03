@@ -20,7 +20,7 @@ describe('Counter', () => {
 
 	it('renders with redux with custom initial state', () => {
 		const { container } = render(<ConnectedCounter />, {
-			initialState: { count: 3 },
+			initialState: { ...rootPreloadedState, counter: { count: 3 } },
 		});
 		const buttonDecrement = container.querySelector(
 			'.Counter-Button_decrement'
