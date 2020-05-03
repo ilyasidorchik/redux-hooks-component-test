@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import { reducer } from './Counter/duck';
-import App from './App';
+import rootReducer from './modules/Counter';
+import App from './components/App';
 
-const store = createStore(reducer);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
 	<Provider store={store}>

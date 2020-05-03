@@ -8,7 +8,7 @@ export const initialState = {
 	count: 0,
 };
 
-export function reducer(state = initialState, action) {
+function reducer(state = initialState, action) {
 	switch (action.type) {
 		case INCREMENT:
 			return {
@@ -22,3 +22,7 @@ export function reducer(state = initialState, action) {
 			return state;
 	}
 }
+
+export const selectCount = (state) => state.count;
+
+export default reducer;

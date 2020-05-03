@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { increment, decrement } from './duck';
+import { selectCount, increment, decrement } from '../../modules/Counter';
 
 const Counter = () => {
-	const count = useSelector(state => state.count);
+	const count = useSelector(selectCount);
 	const dispatch = useDispatch();
 
 	const handleDecrease = () => {

@@ -3,7 +3,9 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render as rtlRender } from '@testing-library/react';
 
-import { initialState as reducerInitialState, reducer } from '../Counter/duck';
+import reducer, {
+	initialState as reducerInitialState,
+} from '../modules/Counter';
 
 function render(
 	ui,
@@ -20,5 +22,4 @@ function render(
 }
 
 export * from '@testing-library/react';
-
 export { render };

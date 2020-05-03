@@ -1,7 +1,7 @@
 import React from 'react';
 import { createStore } from 'redux';
 
-import { render, fireEvent } from '../utils/test-utils';
+import { render, fireEvent } from '../../utils/test-utils';
 import ConnectedCounter from '.';
 
 describe('Counter', () => {
