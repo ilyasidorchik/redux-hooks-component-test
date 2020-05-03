@@ -3,27 +3,21 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { render as rtlRender } from '@testing-library/react';
 
-// import { preloadedState } from '../index';
-import reducer from '../modules';
-
-export const preloadedState = {
-	counter: {
-		count: 0,
-	},
-};
+import reducer, { rootPreloadedState } from '../modules';
 
 function getInitialStore(initialState) {
-	if (initialState.counter) return initialState;
+	if (!initialState) return rootPreloadedState;
 
-	preloadedState.counter = initialState;
-
-	return preloadedState;
+	return {
+		...rootPreloadedState,
+		counter: initialState,
+	};
 }
 
 function render(
 	ui,
 	{
-		initialState = preloadedState,
+		initialState,
 		store = createStore(reducer, getInitialStore(initialState)),
 		...renderOptions
 	} = {}

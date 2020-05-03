@@ -1,7 +1,8 @@
 import React from 'react';
 import { createStore } from 'redux';
 
-import { preloadedState, render, fireEvent } from '../../utils/test-utils';
+import { rootPreloadedState } from '../../modules';
+import { render, fireEvent } from '../../utils/test-utils';
 import ConnectedCounter from '.';
 
 describe('Counter', () => {
@@ -32,9 +33,10 @@ describe('Counter', () => {
 	});
 
 	it('renders with redux with custom store', () => {
-		const newState = preloadedState;
-		preloadedState.counter = { count: 1000 };
-		const store = createStore(() => newState);
+		const store = createStore(() => ({
+			...rootPreloadedState,
+			counter: { count: 1000 },
+		}));
 
 		const { container } = render(<ConnectedCounter />, {
 			store,
