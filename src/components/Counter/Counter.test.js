@@ -1,13 +1,15 @@
 import React from 'react';
 import { createStore } from 'redux';
 
-import { render, fireEvent } from '../../utils/test-utils';
+import { preloadedState, render, fireEvent } from '../../utils/test-utils';
 import ConnectedCounter from '.';
 
 describe('Counter', () => {
 	it('renders with redux with defaults', () => {
 		const { container } = render(<ConnectedCounter />);
-		const buttonIncrement = container.querySelector('.Counter-Button_increment');
+		const buttonIncrement = container.querySelector(
+			'.Counter-Button_increment'
+		);
 		const value = container.querySelector('.Counter-Value');
 
 		fireEvent.click(buttonIncrement);
@@ -19,8 +21,10 @@ describe('Counter', () => {
 		const { container } = render(<ConnectedCounter />, {
 			initialState: { count: 3 },
 		});
-		const buttonDecrement = container.querySelector('.Counter-Button_decrement');
-		const value = container.querySelector('.Counter-Value')
+		const buttonDecrement = container.querySelector(
+			'.Counter-Button_decrement'
+		);
+		const value = container.querySelector('.Counter-Value');
 
 		fireEvent.click(buttonDecrement);
 
@@ -28,14 +32,20 @@ describe('Counter', () => {
 	});
 
 	it('renders with redux with custom store', () => {
-		const store = createStore(() => ({ count: 1000 }));
+		const newState = preloadedState;
+		preloadedState.counter = { count: 1000 };
+		const store = createStore(() => newState);
 
 		const { container } = render(<ConnectedCounter />, {
 			store,
 		});
-		const buttonIncrement = container.querySelector('.Counter-Button_increment');
-		const buttonDecrement = container.querySelector('.Counter-Button_decrement');
-		const value = container.querySelector('.Counter-Value')
+		const buttonIncrement = container.querySelector(
+			'.Counter-Button_increment'
+		);
+		const buttonDecrement = container.querySelector(
+			'.Counter-Button_decrement'
+		);
+		const value = container.querySelector('.Counter-Value');
 
 		fireEvent.click(buttonIncrement);
 		expect(value).toHaveTextContent('1000');

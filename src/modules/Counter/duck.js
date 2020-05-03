@@ -23,6 +23,6 @@ function reducer(state = initialState, action) {
 	}
 }
 
-export const selectCount = (state) => state.count;
+export const selectCount = (state) => state.counter.count;
 
 export default reducer;
