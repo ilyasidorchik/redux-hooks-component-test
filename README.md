@@ -1,6 +1,6 @@
 # Test of a component with Redux Hooks
 
-I tested the [`Counter`](https://github.com/ilyasidorchik/redux-hooks-component-test/blob/master/src/components/Counter/Counter.test.js) component that used Redux Hooks: `useSelector` and `useDispatch`. I made it by rendering with a Provider. My example is based on the recipe from React Testing Library.
+I tested the [`Counter`](https://github.com/ilyasidorchik/redux-hooks-component-test/blob/master/src/components/Counter/Counter.test.js) component that used Redux Hooks: `useSelector` and `useDispatch`. I made it by rendering with a Provider. My example is based on the recipe from React Testing Library.
 
 ## Manual
 
@@ -17,7 +17,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 
 ## Motivation
 
-Hooks API is a modern thing in React world. When I worked with Redux state container I wanted to use new Hooks, too. Unfortunately, I did’t understand how to test such a component.
+Hooks API is a modern thing in React world. When I worked with Redux state container I wanted to use new Hooks, too. Unfortunately, I did’t understand how to test such a component.
 
 
 ## Process
@@ -33,14 +33,14 @@ TypeError: (0 , _reactRedux.useDispatch) is not a function
 could not find react-redux context value; please ensure the component is wrapped in a <Provider>
 ```
 
-I was thinking of giving up and returning to the old method, but I tried to consult with experienced developers. One of them, a Redux contributor Nick McCurdy, answered that the hooks were recommended and made things like typechecking much easier. Also he suggested a test by rendering with a Provider.
+I was thinking of giving up and returning to the old method, but I tried to consult with experienced developers. One of them, a Redux contributor Nick McCurdy, answered that the hooks were recommended and made things like typechecking much easier. Also he suggested a test by rendering with a Provider.
 
-I kept walking in that direction. I found the special recipe in React Testing Library and created my current repository.
+I kept walking in that direction. I found the special recipe in React Testing Library and created my current repository.
 
 
 ## Plans
 
-Perhaps I’ll add Sagas and Typescript to my example.
+Perhaps I’ll add Sagas and Typescript to my example.
 
 
 ## Sources
