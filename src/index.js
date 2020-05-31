@@ -9,8 +9,8 @@ import App from './components/App';
 const store = createStore(rootReducer, rootPreloadedState);
 
 ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.querySelector('.Root')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector('.Root')
 );
