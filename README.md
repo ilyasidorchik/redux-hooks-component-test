@@ -47,4 +47,4 @@ Perhaps I’ll add Sagas and Typescript to my example.
 
 [Docs about Redux Hooks](https://react-redux.js.org/next/api/hooks)<br />
 [React Redux Test Recipe](https://testing-library.com/docs/example-react-redux)<br/>
-[Lecture 'Hooks, HOCS, and Tradeoffs'](https://youtu.be/xiKMbmDv-Vw?t=1191)
+[Lecture ’Hooks, HOCS, and Tradeoffs’](https://youtu.be/xiKMbmDv-Vw?t=1191)
